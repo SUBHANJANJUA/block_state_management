@@ -1,4 +1,4 @@
-package com.example.block_state_management
+package com.example.block_practice
 
 import io.flutter.embedding.android.FlutterActivity
 
