@@ -1,6 +1,9 @@
 import 'package:block_practice/boc/Counter/counter_bloc.dart';
+import 'package:block_practice/boc/image_picker/image_picker_bloc.dart';
 import 'package:block_practice/boc/switch/switch_bloc.dart';
-import 'package:block_practice/switch_slider_screen.dart';
+import 'package:block_practice/boc/todo/to_do_bloc.dart';
+import 'package:block_practice/ui/to_do_screen.dart';
+import 'package:block_practice/utils/image_picker_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,11 +20,13 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => CounterBloc()),
         BlocProvider(create: (context) => SwitchBloc()),
+        BlocProvider(create: (context) => ImagePickerBloc(ImagePickerUtils())),
+        BlocProvider(create: (context) => ToDoBloc()),
       ],
       child: MaterialApp(
         title: 'Flutter Bloc Counter',
         theme: ThemeData(primarySwatch: Colors.blue),
-        home: const SwitchSliderScreen(),
+        home: const ToDoScreen(),
       ),
     );
   }
